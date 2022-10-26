@@ -1,0 +1,17 @@
+﻿.container{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.container div{
+    margin-top:5px;
+}
+
+.bttnStyle {
+    padding: 2px 6px;
+    background-color: #AA8B56;
+    border-radius: 3px;
+    color: white;
+}

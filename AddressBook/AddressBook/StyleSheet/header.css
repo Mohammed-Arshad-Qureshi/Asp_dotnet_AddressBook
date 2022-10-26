@@ -1,0 +1,50 @@
+﻿
+.container {
+    width: 55%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    background-color: #76BA99;
+    border-radius: 30px;
+}
+.sub-container{
+    width:95%;
+    height:auto;
+    background-color:white;
+    margin-top:5px;
+    margin-bottom:5px;
+    border-radius:20px;
+   
+}
+
+.field-container {
+    display: flex;
+    flex-direction: row;
+    margin: 50px 0 30px 0;
+    justify-content: space-around;
+}
+
+.field-container div{
+    margin-left:15px;
+}
+
+h3 {
+    font-family: 'Cabin Sketch', cursive;
+}
+
+.heading-container{
+    display:flex;
+    justify-content:center;
+    margin:20px 0 20px 0;
+}
+
+.input-field {
+    border-radius: 5px;
+}
+
+.error-msg{
+    display:flex;
+    justify-content:center;
+}
