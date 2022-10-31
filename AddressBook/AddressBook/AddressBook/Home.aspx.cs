@@ -29,6 +29,7 @@ namespace AddressBook.AddressBook
                 using (con)
                 {
                     con.Open();
+                    string state = State.SelectedValue.ToString();
                     SqlCommand cmd = new SqlCommand("AddContact");
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Connection = con;
@@ -36,29 +37,38 @@ namespace AddressBook.AddressBook
                     cmd.Parameters.AddWithValue("@LastName", TextBox2.Text);
                     cmd.Parameters.AddWithValue("@Address", TextBox3.Text);
                     cmd.Parameters.AddWithValue("@City", TextBox4.Text);
-                    cmd.Parameters.AddWithValue("@State", State.SelectedValue.ToString());
+                    cmd.Parameters.AddWithValue("@State", state);
                     cmd.Parameters.AddWithValue("@Pincode", TextBox6.Text);
                     cmd.Parameters.AddWithValue("@Phone", TextBox7.Text);
                     cmd.Parameters.AddWithValue("@Email", TextBox8.Text);
                     cmd.Parameters.Add("@default",SqlDbType.Int,0);
                     cmd.Parameters["@default"].Direction = ParameterDirection.Output;
-                    cmd.ExecuteNonQuery();
-                   int message = (int)cmd.Parameters["@default"].Value;
-                    if(message == 1)
+                    if (state != "------- Select -------")
                     {
-                        Label9.Text = "First Name Already Exists";
-                        Label9.ForeColor = System.Drawing.Color.Red;
-                    }
-                    else if(message == 2)
-                    {
-                        Label9.Text = "Email Already Exists";
-                        Label9.ForeColor = System.Drawing.Color.Red;
+                        cmd.ExecuteNonQuery();
+                        int message = (int)cmd.Parameters["@default"].Value;
+                        if (message == 1)
+                        {
+                            Label9.Text = "First Name Already Exists";
+                            Label9.ForeColor = System.Drawing.Color.Red;
+                        }
+                        else if (message == 2)
+                        {
+                            Label9.Text = "Email Already Exists";
+                            Label9.ForeColor = System.Drawing.Color.Red;
+                        }
+                        else
+                        {
+                            Label9.Text = "Contact Added Successfully";
+                            Label9.ForeColor = System.Drawing.Color.Green;
+                            Response.Redirect("AddressBookList.aspx");
+                        }
                     }
                     else
                     {
-                        Label9.Text = "Contact Added Successfully";
-                        Label9.ForeColor = System.Drawing.Color.Green;
-                        Response.Redirect("AddressBookList.aspx");
+                        Label9.Text = "Select the State";
+                        Label9.ForeColor = System.Drawing.Color.Red;
+
                     }
                 }
 

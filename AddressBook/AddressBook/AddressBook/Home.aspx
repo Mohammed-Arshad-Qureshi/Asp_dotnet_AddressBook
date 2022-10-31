@@ -12,7 +12,6 @@
                     <h3>CONTACT FORM</h3>
                 </div>
             </div>
-
             <div class="field-container">
                 <div>
                     <asp:Label ID="Label1" runat="server" Text="FirstName"></asp:Label>
@@ -47,7 +46,6 @@
                         <asp:ListItem>Bihar</asp:ListItem>
                         <asp:ListItem>Chandigarh</asp:ListItem>
                         <asp:ListItem>Chattisgarh</asp:ListItem>
-                        <asp:ListItem>Dadra and Nagar Haveli</asp:ListItem>
                         <asp:ListItem>Daman and Diu</asp:ListItem>
                         <asp:ListItem>Delhi</asp:ListItem>
                         <asp:ListItem>Goa</asp:ListItem>

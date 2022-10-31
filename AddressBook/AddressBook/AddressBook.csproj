@@ -128,7 +128,11 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="AddressBookMainPage.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Img\Cancel.png" />
+    <Content Include="Img\Delete.png" />
+    <Content Include="Img\Edit.png" />
     <Content Include="Img\logo.jpg" />
+    <Content Include="Img\Update.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
