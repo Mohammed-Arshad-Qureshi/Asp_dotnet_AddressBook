@@ -5,18 +5,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 129px;
     background-color: #76BA99;
     border-radius: 30px;
 }
-.sub-container{
-    width:95%;
-    height:auto;
-    background-color:white;
-    margin-top:5px;
-    margin-bottom:5px;
-    border-radius:20px;
-   
+
+.sub-container {
+    width: 95%;
+    height: auto;
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 20px;
 }
 
 .field-container {
@@ -26,25 +26,74 @@
     justify-content: space-around;
 }
 
-.field-container div{
-    margin-left:15px;
-}
+    .field-container div {
+        margin-left: 15px;
+    }
 
 h3 {
     font-family: 'Cabin Sketch', cursive;
 }
 
-.heading-container{
-    display:flex;
-    justify-content:center;
-    margin:20px 0 20px 0;
+.heading-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 20px 0;
 }
 
 .input-field {
     border-radius: 5px;
 }
 
-.error-msg{
-    display:flex;
-    justify-content:center;
+.error-msg {
+    display: flex;
+    justify-content: center;
+}
+
+.main-cont {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: self-end;
+}
+
+    .left-container div {
+        margin: 25px 80px 25px 0;
+    }
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: self-end;
+}
+
+    .right-container div {
+        margin: 25px 150px 25px 0;
+    }
+
+.list-bttn {
+    width: 185px;
+}
+
+.submit-bttn {
+    width: 185px;
+}
+
+.drop-field {
+    border-radius: 5px;
+    border: 2px solid black;
+    width: 181px;
+}
+
+.check-Container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 20px 0;
 }

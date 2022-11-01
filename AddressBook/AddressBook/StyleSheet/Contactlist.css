@@ -33,3 +33,24 @@
 .imageStyle{
     width:30px;
 }
+.add-bttn{
+    background-color:#7FB414;
+    color:white;
+    border-radius:5px;
+    width:240px;
+}
+.end-container{
+    width:100%;
+    display:flex;
+    justify-content:end;
+}
+.end-container div{
+    margin-right:30px;
+}
+
+.export-bttn {
+    background-color: #4E6C50;
+    color: white;
+    border-radius: 5px;
+    width: 150px;
+}

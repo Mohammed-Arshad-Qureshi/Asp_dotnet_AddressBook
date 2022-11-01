@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AddressBookMainPage.Master" AutoEventWireup="true" CodeBehind="AddressBookList.aspx.cs" Inherits="AddressBook.AddressBook.AddressBookList" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AddressBookMainPage.Master" AutoEventWireup="true" CodeBehind="AddressBookList.aspx.cs" Inherits="AddressBook.AddressBook.AddressBookList" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../StyleSheet/Contactlist.css" rel="stylesheet">
@@ -8,7 +8,7 @@
     <div class="container">
         <div>
             <div class="add-bttn">
-                <asp:Button ID="Button1" CssClass="btn btn-lg btn-success" runat="server" Text="Add Contact" OnClick="Button1_Click" />
+                <asp:Button ID="Button1" CssClass="btn btn-group-lg add-bttn" runat="server" Text="Add Contact" OnClick="Button1_Click" />
             </div>
             <div>
                 <div>
@@ -57,7 +57,7 @@
                                     <asp:Label ID="Label5" runat="server" Text='<%# Eval("State") %>'></asp:Label>
                                 </ItemTemplate>
                                 <EditItemTemplate>
-                                    <asp:DropDownList style="width:170px" Text='<%# Eval("State") %>' ID="State" runat="server">
+                                    <asp:DropDownList Style="width: 170px" Text='<%# Eval("State") %>' ID="State" runat="server">
                                         <asp:ListItem>Andhra Pradesh</asp:ListItem>
                                         <asp:ListItem>Arunachal Pradesh</asp:ListItem>
                                         <asp:ListItem>Assam</asp:ListItem>
@@ -120,11 +120,11 @@
                                     <asp:Label ID="Label8" runat="server" Text='<%# Eval("Email") %>'></asp:Label>
                                 </ItemTemplate>
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="TextBox8" style="width:160px" runat="server" Text='<%# Eval("Email") %>'></asp:TextBox>
+                                    <asp:TextBox ID="TextBox8" Style="width: 160px" runat="server" Text='<%# Eval("Email") %>'></asp:TextBox>
                                 </EditItemTemplate>
                             </asp:TemplateField>
-                            <asp:CommandField  ShowEditButton="True" ShowDeleteButton="true" ButtonType="Image" CancelImageUrl="~/Img/Cancel.png" DeleteImageUrl="~/Img/Delete.png" EditImageUrl="~/Img/Edit.png" UpdateImageUrl="~/Img/Update.png" HeaderText="Operations" >
-                            <ControlStyle Width="30px" />
+                            <asp:CommandField ShowEditButton="True" ShowDeleteButton="true" ButtonType="Image" CancelImageUrl="~/Img/Cancel.png" DeleteImageUrl="~/Img/Delete.png" EditImageUrl="~/Img/Edit.png" UpdateImageUrl="~/Img/Update.png" HeaderText="Operations">
+                                <ControlStyle Width="30px" />
                             </asp:CommandField>
                         </Columns>
                     </asp:GridView>
@@ -134,5 +134,12 @@
                 <asp:Label ID="Label8" runat="server" Text=""></asp:Label>
             </div>
         </div>
+        <div class="end-container">
+            <div>
+                <asp:Button ID="Button2" runat="server" CssClass="export-bttn btn btn-group-lg" Text="Export" OnClick="Button2_Click" />
+            </div>
+        </div>
+
     </div>
+
 </asp:Content>

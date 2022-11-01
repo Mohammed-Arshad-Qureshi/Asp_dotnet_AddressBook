@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -157,6 +158,38 @@ namespace AddressBook.AddressBook
                 throw ex;
             }
 
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            ExportGridToExcel();
+        }
+
+        private void ExportGridToExcel()
+        {
+            Response.Clear();
+            Response.Buffer = true;
+            Response.ClearContent();
+            Response.ClearHeaders();
+            Response.Charset = "";
+            string FileName = "Contacts" + DateTime.Now + ".xls";
+            StringWriter strwritter = new StringWriter();
+            HtmlTextWriter htmltextwrtter = new HtmlTextWriter(strwritter);
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.ContentType = "application/vnd.ms-excel";
+            Response.AddHeader("Content-Disposition", "attachment;filename=" + FileName);
+            GridViewdata.GridLines = GridLines.Both;
+            GridViewdata.HeaderStyle.Font.Bold = true;
+            GridViewdata.RenderControl(htmltextwrtter);
+            Response.Write(strwritter.ToString());
+            Response.End();
+
+        }
+
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            //required to avoid the runtime error "  
+            //Control 'GridView1' of type 'GridView' must be placed inside a form tag with runat=server."  
         }
     }
 }
